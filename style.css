@@ -1,0 +1,110 @@
+/* Сброс стандартных стилей */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 0 0px; /* Отступы от краев экрана */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8); /* Цвет фона header */
+    padding: 0 10px; /* Отступы от краев контейнера */
+    height: 84px;
+}
+
+.header-top {
+    display: flex;
+    padding: 18px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px; /* Измените этот размер по вашему усмотрению */
+    height: auto; /* Установка максимальной ширины логотипа */
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Отступ между элементами внутри right */
+}
+
+/* Стили для элементов навигации */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #fff; /* Устанавливаем белый цвет текста */
+    transition: color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+/* Изменение цвета при наведении */
+nav a:hover {
+    color: turquoise;
+}
+
+.user-avatar {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.avatar {
+    overflow:hidden;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #37F3FF, #0056FF);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-img {
+    width: 150px; /* Измените этот размер по вашему усмотрению */
+    height: auto; /* Сохраняет пропорции изображения */
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-book-btn {
+    background-color: turquoise; /* Изначальный цвет фона */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границу */
+    padding: 15px 15px; /* Отступы */
+    border-radius: 10px; /* Закругленные углы */
+    cursor: pointer; /* Изменение курсора при наведении */
+    transition: background-color 0.3s; /* Плавное изменение цвета фона */
+}
+
+/* Изменение цвета фона при наведении */
+.add-book-btn:hover {
+    background-color: #88eed8; /* Светлее оттенение turquoise */
+}
