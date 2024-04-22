@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #24262b;
+}
+
+* {
+    margin: 0;
+}
 /* Сброс стандартных стилей */
 body, ul {
     margin: 0;
@@ -6,11 +16,12 @@ body, ul {
 
 .container {
     padding: 0 0px; /* Отступы от краев экрана */
+    background-color: #24262b;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.8); /* Цвет фона header */
-    padding: 0 10px; /* Отступы от краев контейнера */
+    background-color: rgb(27, 26, 26); /* Цвет фона header */
+    padding: 0 25px; /* Отступы от краев контейнера */
     height: 84px;
 }
 
@@ -22,7 +33,7 @@ header {
 }
 
 .logo img {
-    width: 150px; /* Измените этот размер по вашему усмотрению */
+    width: 200px; /* Измените этот размер по вашему усмотрению */
     height: auto; /* Установка максимальной ширины логотипа */
 }
 
@@ -82,10 +93,6 @@ nav a:hover {
     object-fit: cover;
 }
 
-.logo-img {
-    width: 150px; /* Измените этот размер по вашему усмотрению */
-    height: auto; /* Сохраняет пропорции изображения */
-}
 
 button {
     background-color: transparent;
@@ -94,17 +101,190 @@ button {
     cursor: pointer;
 }
 
-.add-book-btn {
-    background-color: turquoise; /* Изначальный цвет фона */
-    color: #fff; /* Цвет текста */
-    border: none; /* Убираем границу */
-    padding: 15px 15px; /* Отступы */
-    border-radius: 10px; /* Закругленные углы */
-    cursor: pointer; /* Изменение курсора при наведении */
-    transition: background-color 0.3s; /* Плавное изменение цвета фона */
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Изменение цвета фона при наведении */
-.add-book-btn:hover {
-    background-color: #88eed8; /* Светлее оттенение turquoise */
+.button {
+    width: 140px;
+    height: 45px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: turquoise;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    }
+  
+  .button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+.avatar-button:hover .avatar {
+    box-shadow: 0 0 0 3px white; /* Внутренняя обводка */
+}
+
+.hero {
+    background: url('images/hero2.jpeg') no-repeat center center;
+    background-size: cover;
+    height: 550px; /* Подстройте высоту по необходимости */
+    width: auto;
+    color: white; /* Подстройте цвет текста по необходимости */
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    border-radius: 20px; /* Rounded corners */
+    z-index: -1; /* Place behind the text */
+}
+
+.hero-text {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0; /* Align to the bottom */
+    left: 0;
+    right: 0;
+    text-align: left; /* Center the text horizontally */
+    padding: 20px; /* Add some padding for readability */
+}
+
+.hero-text p:first-child,
+.hero-text p:last-child {
+    font-size: 25px; /* Размер текста для первого и последнего абзаца */
+}
+
+.hero-text b {
+    line-height: 0.9;
+    font-size: 170px;
+    display: block;
+    margin: 0 auto;
+    width: 100%; /* Занимает всю ширину */
+}
+
+.cards {
+    display: grid; /* Используем Grid вместо Flexbox */
+    grid-template-columns: auto auto; /* Две колонки, размеры автоматические */
+    grid-gap: 10px; /* Отступы между элементами */
+}
+  
+.card {
+    height: 120px;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 47px; /* Внутренние отступы карточки */
+}
+
+.card div {
+    width: 200px;
+}
+
+  /* Первая карточка займет всю ширину первого ряда */
+.card:first-child {
+    height: 150px;
+    grid-column: 1 / span 2; /* Занимает две колонки */
+}
+
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: turquoise;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
 }

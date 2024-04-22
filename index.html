@@ -4,39 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title>MyBookList</title>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-top">
-                <a href="#" class="logo"></a>
-                <div class="right">
-                    <nav>
-                        <ul>
-                            <li><a href="#">Главная</a></li>
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Мои книги</a></li>
-                        </ul>
-                    </nav>
-                    <div class="user-avatar">
-                        <button class="avatar-button" aria-label="User menu" role="button">
-                            <div class="avatar">
-                                <img src="images/default-avatar.png" alt="Аватар пользователя">
-                            </div>
-                        </button>
-                    </div>
-                    <button class="add-book-btn">+Книга</button>
+    <header>
+        <div class="header-top">
+            <a href="/index.html" class="logo"><img src="images/MyBookListLogo.png" alt="Логотип сайта"></a>
+            <div class="right">
+                <nav>
+                    <ul>
+                        <li><a href="/index.html">Главная</a></li>
+                        <li><a href="/about.html">О нас</a></li>
+                        <li><a href="#">Мои книги</a></li>
+                    </ul>
+                </nav>
+                <div class="user-avatar">
+                    <button class="avatar-button" aria-label="User menu" role="button">
+                        <div class="avatar">
+                            <img src="images/default-avatar.png" alt="Аватар пользователя">
+                        </div>
+                    </button>
+                </div>
+                <div class="wrap">
+                    <button class="button">+Книга</button>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
         <main>
-            <!-- Содержимое основной части сайта -->
+            <section class="hero">
+                <div class="hero-text">
+                    <p>Добро пожаловать</p>
+                    <b>MYBOOKLIST</b>
+                    <p>Соберите свою коллекцию книг и личный рейтинг в одном месте и поделитесь ими со всем миром</p>
+                </div>
+            </section>
+            <div class="container">
+                <section class="cards">
+                    <div class="card">
+                        <div>
+                            <h3>Список книг</h3>
+                            <p>Следите за книгами, которые вы читали или хотите прочитать.</p>
+                        </div>
+                      
+                    </div>
+                    <div class="card">
+                        <div>
+                            <h3>Пишите рецензии</h3>
+                            <p>Поделитесь своими мыслями и мнениями о книгах, которые вы прочитали.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <h3>Оценивайте</h3>
+                            <p>Выставляйте свой собственный рейтинг!</p>
+                        </div>
+                      </div>
+                  </section>
+            </div>
         </main>
-        <footer>
-            <!-- Содержимое подвала сайта -->
-        </footer>
-    </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>компания</h4>
+                        <ul>
+                            <li><a href="#">о нас</a></li>
+                            <li><a href="#">условия использования</a></li>
+                            <li><a href="#">политика конфиденциальности</a></li>
+                            <li><a href="#">политика Cookie</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </footer>
 </body>
-
 </html>
