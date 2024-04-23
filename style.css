@@ -5,6 +5,19 @@ body {
     background-color: #24262b;
 }
 
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgb(60, 60, 60);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
 * {
     margin: 0;
 }
@@ -287,4 +300,67 @@ ul{
   .footer-col{
     width: 100%;
 }
+}
+
+.community {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    width: 633px;
+}
+
+.main-text {
+    font-size: 71px;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.sub-text {
+    font-size: 28px;
+}
+
+.community .main-text {
+    margin-bottom: 15px;
+}
+
+.our_goal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #fff;
+    margin-bottom: 100px;
+}
+
+.our_goal .sub-text {
+    width: 800px;
+}
+
+.our_goal .main-text {
+    width: 500px;
+}
+
+.terms_text_container {
+    margin-top: 50px;
+    color: #fff;
+}
+
+.terms_text_container h1, h2 {
+    margin-bottom: 20px;
+}
+
+.terms_text_container h2 {
+    margin-top: 70px;
+}
+
+.terms_text_container p {
+    width: 670px;
+    color: #bbbbbb;
+}
+
+.terms_text_container li {
+    margin: 12px 0;
+    color: #bbbbbb;
 }
