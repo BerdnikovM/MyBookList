@@ -347,12 +347,18 @@ ul{
     color: #fff;
 }
 
-.terms_text_container h1, h2 {
+.terms_text_container h1 {
     margin-bottom: 20px;
 }
 
 .terms_text_container h2 {
     margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.terms_text_container h3 {
+    margin-top: 70px;
+    margin-bottom: 20px;
 }
 
 .terms_text_container p {
