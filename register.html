@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Регистрация | MyBookList</title>
+    <script src="register_valid.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a href="/index.html" class="logo"><img src="images/MyBookListLogo.png" alt="Логотип сайта"></a>
+        </div>
+    </header>
+    <main class="login">
+        <div class="login-form">
+            <h1>Регистрация</h1>
+            <form action="register.php" method="post"> 
+                <label for="name">Имя пользователя</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Зарегистрироваться</button>
+                <p class="register-link">Есть аккаунт? <a href="/login.php">Войти</a></p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
