@@ -16,13 +16,14 @@
     <main class="login">
         <div class="login-form">
             <h1>Вход</h1>
-            <form id="login-form" action="login-form.php" method="post"> <!-- Указываем путь к файлу обработки и метод передачи данных -->
+            <form action="login-form.php" method="post"> <!-- Указываем путь к файлу обработки и метод передачи данных -->
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required> <!-- Добавляем атрибут name для идентификации поля на сервере -->
                 <label for="password">Пароль</label>
                 <input type="password" id="password" name="password" required> <!-- Аналогично добавляем атрибут name -->
                 <button type="submit">Войти</button> <!-- Указываем тип кнопки -->
             </form>
+
             <div id="login-message">
                 <?php
                 // Выводим сообщение из сеанса, если оно существует

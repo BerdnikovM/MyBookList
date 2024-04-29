@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Выполнение запроса
     if ($stmt->execute()) {
         // Если данные успешно добавлены, перенаправляем пользователя на страницу входа
-        header("Location: login.html");
+        header("Location: login.php");
         exit();
     } else {
         // Если произошла ошибка, выдаем сообщение об ошибке

@@ -82,7 +82,38 @@ nav a:hover {
 .user-avatar {
     display: flex;
     align-items: center;
+    position: relative;
 }
+
+.user-menu {
+    position: absolute;
+    top: 100%; /* Отображать меню под кнопкой */
+    left: 0;
+    margin-top: 8px;
+    width: 192px;
+    min-height: 85px;
+    background-color: #24262b;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+    z-index: 1000; /* Убедитесь, что меню отображается поверх других элементов */
+    color: white; /* Измените цвет текста на белый */
+    font-size: 16px; /* Подстройте размер шрифта */
+}
+
+.user-menu button {
+    width: 100%; /* Расширьте кнопки на всю ширину меню */
+    background-color: transparent; /* Удалите стандартный фон кнопок */
+    border: none; /* Удалите границы */
+    padding: 12px 16px; /* Добавьте отступы для кнопок */
+    text-align: left; /* Выровняйте текст по левому краю кнопок */
+    cursor: pointer; /* Измените курсор на указатель при наведении на кнопки */
+}
+
+.user-menu button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Добавьте небольшой эффект подсветки при наведении на кнопки */
+}
+
 
 .avatar-button {
     background: none;
