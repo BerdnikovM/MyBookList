@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>О нас | MyBookList</title>
+    <title>Настройки | MyBookList</title>
 </head>
 <body>
     <header>
@@ -40,19 +40,39 @@
     </header>
     <main>
         <div class="container">
-            <div class="community">
-                <p class="main-text">Мы - сообщество книголюбов</p>
-                <p class="sub-text">которые любят делиться друг с другом своим опытом и рекомендациями. Наша миссия - создать платформу, на которой книголюбы смогут легко сохранять и упорядочивать список своих любимых книг, а также открывать для себя новые.</p>
-            </div>
-            <div class="our_goal">
-                <h2 class="main-text">Наша цель</h2>
-                <p class="sub-text">предоставить простой и удобный интерфейс, позволяющий пользователям быстро и легко добавлять книги в свой список, распределять их по категориям и делиться ими с друзьями.</p>
-            </div>
-            <div class="our_goal">
-                <h2 class="main-text">Мы стремимся</h2>
-                <p class="sub-text">стать основным ресурсом для всех, кто хочет отслеживать книги, которыми владеет и которые хочет прочитать, и создать сообщество единомышленников, которые смогут общаться и делиться своей любовью к книгам с другими.</p>
-            </div>
-        </div>      
+            <div class="settings-container">
+                <div class="left-column">
+                    <div class="avatar-settings">
+                        <img id="avatar-img2" src="images/default-avatar.png" alt="Аватар пользователя">
+                    </div>
+                    <div>
+                        <p>Допустимые форматы: JPG, PNG. Максимальный размер: 2 МБ</p>
+                        <button id="change-img">Изменить изображение</button>
+                        <input type="file" id="file-input" style="display: none;" accept="image/jpeg, image/png">
+                    </div>   
+                </div>
+                
+            
+                <div class="right-column">
+                    <form id="user-info-form">
+                        <label for="username">Имя пользователя:</label>
+                        <input type="text" id="username" name="username" maxlength="50" readonly>
+                        <p>Ваше имя пользователя уникально для вашей учетной записи и отображается на странице вашего профиля и в вашем URL-адресе. Это не ваш адрес электронной почты.</p>
+                        <label for="display-name">Отображаемое имя:</label>
+                        <input type="text" id="display-name" name="display-name" maxlength="50">
+                        <p>Оно отделено от вашего имени пользователя. Это может быть ваш ник в любой игре, название компании или ваше настоящее имя, и оно отображается рядом с вашим именем пользователя.</p>
+                        <label for="bio">Биография:</label>
+                        <textarea id="bio" name="bio" maxlength="85"></textarea>
+                        <p>Немного о себе менее чем в 85 символах.</p>
+                        <div>
+                            <!-- <button type="reset">Сбросить</button> -->
+                            <button id="save-button" type="submit">Сохранить</button>
+                        </div>
+                        <div id="statusMessage"></div>
+                    </form>
+                </div>
+            </div>             
+        </div>     
     </main>
     <footer class="footer">
         <div class="container">
@@ -79,5 +99,6 @@
         </div>
    </footer>
    <script src="avatar-btn-script.js"></script>
+   <script src="settings-script.js"></script>
 </body>
 </html>

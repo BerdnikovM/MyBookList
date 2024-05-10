@@ -1,7 +1,8 @@
 // Переменная для хранения состояния меню (открыто/закрыто)
 var menuOpen = false;
 
-// Обработка нажатия кнопки "Аватар пользователя"
+
+// // Обработка нажатия кнопки "Аватар пользователя"
 function toggleUserMenu() {
     // Если меню открыто, закрываем его и выходим из функции
     if (menuOpen) {
@@ -26,6 +27,9 @@ function toggleUserMenu() {
                     menuOpen = true;
 
                     // Назначаем обработчики нажатия кнопок меню
+                    document.getElementById('AdminButton').addEventListener('click', function() {
+                        window.location.href = 'adminPanel.php';
+                    });
                     document.getElementById('settingsButton').addEventListener('click', goToSettings);
                     document.getElementById('logoutButton').addEventListener('click', logoutUser);
                 } else {
@@ -40,9 +44,10 @@ function toggleUserMenu() {
 }
 
 function goToSettings() {
-    // Действия при нажатии на кнопку "Настройки"
-    console.log('Открыть страницу настроек');
+    // Перенаправляем пользователя на страницу настроек
+    window.location.href = 'user-settings.html';
 }
+
 
 function logoutUser() {
     // Отправляем запрос на сервер для выполнения выхода из аккаунта
@@ -77,36 +82,47 @@ function logoutUser() {
     xhr.send();
 }
 
-// Проверка авторизации при загрузке страницы
 function checkAuthorizationOnLoad() {
+    var isAuthenticated = getCookie('authenticated');
+    var isAdmin = getCookie('is_admin');
+
+    if (isAuthenticated) {
+        var myBookBtn = document.getElementById('my-books-link');
+        myBookBtn.style.display = 'inline';
+        
+        var adminBtn = document.getElementById('AdminButton');
+        if (isAdmin) {
+            adminBtn.style.display = 'inline';
+        } else {
+            adminBtn.style.display = 'none';
+        }
+    }
+}
+
+function getCookie(name) {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+            return cookie.substring(name.length + 1);
+        }
+    }
+    return null;
+}
+
+// Функция для загрузки пути к аватару пользователя
+function loadAvatar() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'check_auth.php', true);
+    xhr.open('GET', 'get_avatar_path.php', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-                var authenticated = response.authenticated;
-                var isAdmin = response.isAdmin;
-                var myBookBtn = document.getElementById('my-books-link');
-                var adminBtn = document.getElementById('AdminButton');
-
-                if (authenticated) {
-                    // Пользователь авторизован, показываем кнопку "Мои книги"
-                    myBookBtn.style.display = 'inline';
-                    
-                    // Если пользователь администратор, показываем кнопку "Admin"
-                    if (isAdmin) {
-                        adminBtn.style.display = 'inline';
-                    } else {
-                        adminBtn.style.display = 'none';
-                    }
-                } else {
-                    // Пользователь не авторизован, скрываем обе кнопки
-                    myBookBtn.style.display = 'none';
-                    adminBtn.style.display = 'none';
-                }
+                var avatarPath = xhr.responseText;
+                // Находим элемент img с id 'avatar-img' и меняем его src на путь к аватару пользователя
+                var avatarImg = document.getElementById('avatar-img');
+                avatarImg.src = avatarPath ? avatarPath : 'images/default-avatar.png';
             } else {
-                console.error('Ошибка при выполнении запроса:', xhr.status);
+                console.error('Ошибка при загрузке аватара:', xhr.status);
             }
         }
     };
@@ -114,7 +130,13 @@ function checkAuthorizationOnLoad() {
 }
 
 
-// Вызываем функцию при загрузке страницы
-window.addEventListener('load', checkAuthorizationOnLoad);
+// Вызываем функции при загрузке страницы
+window.addEventListener('load', function() {
+    loadAvatar(); // Добавляем вызов функции загрузки аватара при загрузке страницы
+});
 
+// Вызываем функцию при загрузке страницы
+checkAuthorizationOnLoad();
 document.getElementById('avatarButton').addEventListener('click', toggleUserMenu);
+
+

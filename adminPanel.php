@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>MyBookList</title>
+    <title>AdminPanel | MyBookList</title>
 </head>
 <body>
-    <header>
+<header>
         <div class="header-top">
             <a href="/index.html" class="logo"><img src="images/MyBookListLogo.png" alt="Логотип сайта"></a>
             <div class="right">
@@ -22,7 +22,7 @@
                 <div class="user-avatar">
                     <button class="avatar-button" aria-label="User menu" role="button" id="avatarButton">
                         <div class="avatar">
-                            <img id="avatar-img" src="images/default-avatar.png" alt="Аватар пользователя">
+                        <img id="avatar-img" src="images/default-avatar.png" alt="Аватар пользователя">
                         </div>
                     </button>
                     <!-- Контекстное меню -->
@@ -38,39 +38,29 @@
             </div>
         </div>
     </header>
-        <main>
-            <section class="hero">
-                <div class="hero-text">
-                    <p>Добро пожаловать</p>
-                    <b>MYBOOKLIST</b>
-                    <p>Соберите свою коллекцию книг и личный рейтинг в одном месте и поделитесь ими со всем миром</p>
-                </div>
-            </section>
-            <div class="container">
-                <section class="cards">
-                    <div class="card">
-                        <div>
-                            <h3>Список книг</h3>
-                            <p>Следите за книгами, которые вы читали или хотите прочитать.</p>
-                        </div>
-                      
-                    </div>
-                    <div class="card">
-                        <div>
-                            <h3>Пишите рецензии</h3>
-                            <p>Поделитесь своими мыслями и мнениями о книгах, которые вы прочитали.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div>
-                            <h3>Оценивайте</h3>
-                            <p>Выставляйте свой собственный рейтинг!</p>
-                        </div>
-                      </div>
-                  </section>
+    <main>
+        <div class="container">
+            <div class="admin-section">
+                <h2>Управление ролями</h2>
+                <p>Введите email пользователя и выберите действие:</p>
+                <input type="email" id="userEmail" placeholder="Email пользователя">
+                <div id="statusMessage"></div>
+                <button id="makeAdminBtn">Сделать администратором</button>
+                <button id="makeUserBtn">Сделать пользователем</button>
             </div>
-        </main>
-        <footer class="footer">
+            <div class="admin-section">
+                <h2>Добавить новую книгу</h2>
+                <input type="text" id="bookTitle" placeholder="Название книги">
+                <input type="text" id="bookGenre" placeholder="Жанр книги">
+                <input type="date" id="publicationDate" placeholder="Дата публикации">
+                <textarea id="bookAnnotation" placeholder="Аннотация"></textarea>
+                <input type="file" id="bookImage" accept="image/jpeg, image/png">
+                <div id="bookStatusMessage"></div>
+                <button id="addBookBtn">Добавить книгу</button>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="footer-col">
@@ -95,5 +85,6 @@
             </div>
        </footer>
        <script src="avatar-btn-script.js"></script>
+       <script src="adminPanelScript.js"></script>
 </body>
 </html>

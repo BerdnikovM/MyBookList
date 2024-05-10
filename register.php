@@ -12,8 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Подготовленный запрос для вставки данных
-    $stmt = $conn->prepare("INSERT INTO users (user_name, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $email, $hashed_password);
+    $stmt = $conn->prepare("INSERT INTO users (user_name, display_name, email, password) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $name, $email, $hashed_password);
+    
 
     // Выполнение запроса
     if ($stmt->execute()) {

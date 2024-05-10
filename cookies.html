@@ -20,12 +20,18 @@
                     </ul>
                 </nav>
                 <div class="user-avatar">
-                    <button class="avatar-button" aria-label="User menu" role="button">
+                    <button class="avatar-button" aria-label="User menu" role="button" id="avatarButton">
                         <div class="avatar">
-                            <img src="images/default-avatar.png" alt="Аватар пользователя">
+                            <img id="avatar-img" src="images/default-avatar.png" alt="Аватар пользователя">
                         </div>
                     </button>
-                </div>
+                    <!-- Контекстное меню -->
+                    <div id="userMenu" class="user-menu" style="display: none;">
+                        <button id="AdminButton" style="display: none;">Admin</button>
+                        <button id="settingsButton">Настройки</button>
+                        <button id="logoutButton">Выход</button>
+                    </div>
+                </div>                
                 <div class="wrap">
                     <button class="button">+Книга</button>
                 </div>
@@ -75,5 +81,6 @@
             </div>
         </div>
    </footer>
+   <script src="avatar-btn-script.js"></script>
 </body>
 </html>
