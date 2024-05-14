@@ -53,6 +53,7 @@ document.getElementById('addBookBtn').addEventListener('click', function() {
     // Получаем значения из полей формы
     var title = document.getElementById('bookTitle').value.trim();
     var genre = document.getElementById('bookGenre').value.trim();
+    var author = document.getElementById('bookAuthor').value.trim(); // Получаем автора книги
     var publicationDate = document.getElementById('publicationDate').value.trim();
     var annotation = document.getElementById('bookAnnotation').value.trim();
     var image = document.getElementById('bookImage').files[0];
@@ -61,6 +62,7 @@ document.getElementById('addBookBtn').addEventListener('click', function() {
     var formData = new FormData();
     formData.append('title', title);
     formData.append('genre', genre);
+    formData.append('author', author); // Добавляем автора книги
     formData.append('publication_date', publicationDate);
     formData.append('annotation', annotation);
     formData.append('image', image);
@@ -90,6 +92,7 @@ document.getElementById('addBookBtn').addEventListener('click', function() {
                             // Очищаем поля формы
                             document.getElementById('bookTitle').value = '';
                             document.getElementById('bookGenre').value = '';
+                            document.getElementById('bookAuthor').value = ''; // Очищаем поле для автора книги
                             document.getElementById('publicationDate').value = '';
                             document.getElementById('bookAnnotation').value = '';
                             document.getElementById('bookImage').value = '';

@@ -2,6 +2,16 @@
 var menuOpen = false;
 
 
+// Получаем кнопку "+Книга" по ее классу
+var addBookButton = document.querySelector('.button');
+
+// Добавляем обработчик события "click" на кнопку
+addBookButton.addEventListener('click', function() {
+    // Перенаправляем пользователя на страницу add_book_page.php
+    window.location.href = 'add_book_page.php';
+});
+
+
 // // Обработка нажатия кнопки "Аватар пользователя"
 function toggleUserMenu() {
     // Если меню открыто, закрываем его и выходим из функции
@@ -128,6 +138,8 @@ function loadAvatar() {
     };
     xhr.send();
 }
+
+
 
 
 // Вызываем функции при загрузке страницы

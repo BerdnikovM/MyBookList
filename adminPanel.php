@@ -16,7 +16,7 @@
                     <ul>
                         <li><a href="/index.html">Главная</a></li>
                         <li><a href="/about.html">О нас</a></li>
-                        <li><a href="#" id="my-books-link" style="display: none;">Мои книги</a></li>
+                        <li><a href="/myBooks.php" id="my-books-link" style="display: none;">Мои книги</a></li>
                     </ul>
                 </nav>
                 <div class="user-avatar">
@@ -52,6 +52,7 @@
                 <h2>Добавить новую книгу</h2>
                 <input type="text" id="bookTitle" placeholder="Название книги">
                 <input type="text" id="bookGenre" placeholder="Жанр книги">
+                <input type="text" id="bookAuthor" placeholder="Автор книги">
                 <input type="date" id="publicationDate" placeholder="Дата публикации">
                 <textarea id="bookAnnotation" placeholder="Аннотация"></textarea>
                 <input type="file" id="bookImage" accept="image/jpeg, image/png">

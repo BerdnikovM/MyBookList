@@ -640,3 +640,437 @@ label, input {
     margin-bottom: 10px;
 }
 
+
+
+
+
+
+/* ADD BOOK PAGE */
+
+.add_book_page_title {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.search-container {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    width: 70%;
+    height: 100%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-container input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.book-card {
+    display: flex; /* Располагаем содержимое карточки в строку */
+    width: 450px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.book-cover {
+    flex: 0 0 auto; /* Обеспечиваем фиксированную ширину обложки */
+    margin-right: 10px;
+}
+
+.book-cover img {
+    width: 200px;
+    
+    border-radius: 5px;
+}
+
+.book-details {
+    flex: 1; /* Растягиваем остальное пространство внутри карточки */
+}
+
+.book-title {
+    color: white;
+    margin: 0 0 10px; /* Отступ снизу для названия книги */
+    font-size: 18px;
+}
+
+.book-genre, .book-date, .book-author {
+    color: white;
+    margin: 0; /* Убираем отступы для жанра и даты */
+    font-size: 14px;
+}
+
+.add-to-library {
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 15px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-library:hover {
+    background-color: #45a049;
+}
+
+.add-book-form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.editing-book-details {
+    display: flex;
+    align-items: center;
+}
+
+.editing-book-cover {
+    margin-right: 20px;
+}
+
+.editing-book-cover img {
+    width: 90px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.editing-book-title {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+}
+
+.book-actions {
+    margin-top: 20px;
+}
+
+.categories {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.category-btn {
+    width: 176px;
+    margin-right: 10px;
+    padding: 14px 0;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #24262b;
+    cursor: pointer;
+}
+
+#review {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color:#24262b;
+    color: white;
+}
+
+#editing-addToLibraryBtn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: turquoise;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#editing-addToLibraryBtn:hover {
+    background-color: rgb(108, 255, 240);
+}
+
+#ratingValue {
+    font-size: 50px; /* Увеличиваем размер шрифта */
+    color: dodgerblue; /* Устанавливаем цвет текста */
+    font-weight: bold; /* Делаем шрифт жирным */
+}
+
+.category-btn.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin-bottom: 50px;
+    background-color: transparent;
+
+    &:focus {
+      outline-color: #f8b195;
+    }
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -webkit-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f67280",
+      endColorstr="#355c7d",
+      GradientType=1
+    );
+  }
+
+  input[type="range"]::-moz-range-track {
+    -moz-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -moz-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f67280",
+      endColorstr="#355c7d",
+      GradientType=1
+    );
+  }
+  
+  input[type="range"]::-ms-track {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -moz-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      left,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+      to right,
+      rgba(246, 114, 128, 1) 0%,
+      rgba(192, 108, 132, 1) 50%,
+      rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#f67280",
+      endColorstr="#355c7d",
+      GradientType=1
+    );
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid #f8b195;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  bottom: 8px;
+  background: #222
+    url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png")
+    center no-repeat;
+  background-size: 50%;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+}
+
+
+  input[type="range"]::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #f8b195;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
+    background: #222
+      url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png")
+      center no-repeat;
+    background-size: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  input[type="range"]::-ms-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #f8b195;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
+    background: #222
+      url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png")
+      center no-repeat;
+    background-size: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+
+
+
+
+
+
+  /* MY BOOKS PAGE */
+
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 25px;
+    background-color: #1c1b1b;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.avatar-and-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar-div {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 60px; /* Размер аватара */
+    height: 60px;
+    margin-right: 10px; /* Расстояние между аватаром и текстом */
+}
+
+.avatar-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-image: linear-gradient(to bottom, #37F3FF, #0056FF);
+}
+
+.display-name {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.user-name {
+    font-size: 14px;
+    color: #666; /* Цвет текста user name */
+}
+
+.bio {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.sort-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ширина блока с кнопками сортировки */
+}
+
+.sort-btn {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #363636;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.sort-btn:hover {
+    background-color: #2b2323;
+}
+
+.left-row, .right-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

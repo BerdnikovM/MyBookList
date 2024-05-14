@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>Мои книги | MyBookList</title>
+    <title>Добавить книгу | MyBookList</title>
 </head>
 <body>
 <header>
@@ -40,32 +40,37 @@
     </header>
     <main>
         <div class="container">
-            <div class="user-profile">
-                <div class="avatar-and-name">
-                    <div class="avatar-div">
-                        <img id="avatar-img-myBooks" src="images/default-avatar.png" alt="Аватар пользователя">
+            <h1 class="add_book_page_title">Найти книгу</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Введите название книги">
+                <input type="submit" value="Найти" id="searchButton">
+            </div>
+            <div id="bookList" class="book-list" >
+                
+            </div>
+            <div id="addBookForm" class="add-book-form" style="display: none;">
+                <div class="editing-book-details">
+                    <div class="editing-book-cover">
+                        <img src="#" alt="Обложка книги">
                     </div>
                     <div>
-                        <div class="display-name">Display Name</div>
-                        <div class="user-name">User Name</div>
-                    </div> 
-                </div>
-                <div class="bio">Bio</div>
-                <div class="sort-buttons">
-                    <div class="left-row">
-                        <button class="sort-btn">All</button>
-                        <button class="sort-btn">Finished</button>
-                        <button class="sort-btn">Reading</button>
-                        <button class="sort-btn">Dropped</button>
-                        <button class="sort-btn">Want</button>
-                    </div>
-                    <div class="right-row">
-                        <button class="sort-btn">Сортировка по рейтингу <i class="fas fa-sort"></i></button>
+                        <span id="ratingValue">0</span>
+                        <h3 class="editing-book-title">Название книги</h3>
                     </div>
                 </div>
-            </div>
-            <div class="my-book-list">
-                
+                <div class="book-actions">
+                    <div class="categories">
+                        <button class="category-btn" data-category="Finished">Finished</button>
+                        <button class="category-btn" data-category="Reading">Reading</button>
+                        <button class="category-btn" data-category="Dropped">Dropped</button>
+                        <button class="category-btn" data-category="Want">Want</button>
+                    </div>
+                    <div class="rating-slider">
+                        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="ratingSlider">
+                    </div>
+                    <textarea id="review" placeholder="Напишите рецензию"></textarea>
+                    <button id="editing-addToLibraryBtn">Добавить</button>
+                </div>
             </div>
         </div>
     </main>
@@ -94,5 +99,6 @@
             </div>
        </footer>
        <script src="avatar-btn-script.js"></script>
+       <script src="addbookpage_script.js"></script>
 </body>
 </html>
