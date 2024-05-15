@@ -59,6 +59,25 @@
                 <div id="bookStatusMessage"></div>
                 <button id="addBookBtn">Добавить книгу</button>
             </div>
+            <div class="admin-section">
+                <h2>Управление записями пользователей</h2>
+                <div class="search-form">
+                    <input type="email" id="user-email" placeholder="Введите email пользователя">
+                    <button id="search-user-btn">Найти</button>
+                </div>
+                <div class="user-record">
+                    <!-- Здесь будут отображаться данные из бд -->
+                    <div class="record-info">
+                        <p><strong>Пользователь ID:</strong> <span id="user-id"></span></p>
+                        <p><strong>Книга ID:</strong> <span id="book-id"></span></p>
+                        <p><strong>Рейтинг:</strong> <span id="rating"></span></p>
+                        <p><strong>Отзыв:</strong> <span id="review"></span></p>
+                        <p><strong>Категория:</strong> <span id="category"></span></p>
+                        <p><strong>Дата добавления:</strong> <span id="date-added"></span></p>
+                    </div>
+                    <button id="delete-record-btn">Удалить запись</button>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="footer">

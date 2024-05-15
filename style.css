@@ -518,6 +518,59 @@ label, input {
 }
 
 
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.user-record {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.user-record .record-info {
+    margin-bottom: 10px;
+}
+
+.user-record p {
+    margin: 5px 0;
+}
+
+.user-record button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-record button:hover {
+    background-color: #c82333;
+}
+
+
 
 /* SETTINGS */
 
@@ -835,6 +888,7 @@ label, input {
 
 
 
+
 input[type="range"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1004,7 +1058,7 @@ input[type="range"] {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 25px;
+    margin: 25px 0;
     background-color: #1c1b1b;
     border: 1px solid white;
     border-radius: 15px;
@@ -1065,12 +1119,92 @@ input[type="range"] {
     cursor: pointer;
 }
 
-.sort-btn:hover {
-    background-color: #2b2323;
-}
 
 .left-row, .right-row {
     display: flex;
     gap: 10px;
     align-items: center;
 }
+
+
+
+
+
+
+
+
+
+.my-book-card {
+    border: 1px solid white;
+    border-radius: 15px;
+    background-color: #363636; /* Светло-серый фон */
+    padding: 10px;
+    margin-bottom: 20px; /* Расстояние между карточками */
+}
+
+.main-book-info {
+    display: flex;
+    align-items: center;
+}
+
+.book-cover img {
+    width: 100px; /* Размер обложки книги */
+    height: auto;
+    border-radius: 5px; /* Закругление углов обложки */
+    margin-right: 10px; /* Расстояние между обложкой и остальной информацией */
+}
+
+.my-book-information {
+    flex-grow: 1; /* Растягиваем блок с информацией о книге на всю доступную ширину */
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.book-info-btn {
+    padding: 0;
+}
+
+.book-genre, .book-date, .book-author {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.my-book-rating-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; 
+}
+
+.my-book-rating {
+    font-size: 40px; /* Большой размер шрифта для числа рейтинга */
+    font-weight: bold;
+    color: dodgerblue; /* Устанавливаем цвет текста */
+    margin-bottom: 3px;
+}
+
+.my-book-category {
+    font-size: 15px;
+    display: inline-block;
+    background-color: #00BFFF; /* Светло-синий фон для кнопки категории */
+    color: #FFFFFF; /* Белый текст для кнопки категории */
+    padding: 10px 20px; /* Отступ внутри кнопки категории */
+    border-radius: 25px; /* Закругленные углы для кнопки категории */
+}
+
+.my-book-review {
+    margin-top: 10px; /* Расстояние между книжной карточкой и обзором */
+    color: #ffffff; /* Цвет текста обзора */
+}
+
+
+.sort-btn.active {
+    background-color: #0056FF;
+    color: white;
+}
+
+

@@ -50,22 +50,22 @@
                         <div class="user-name">User Name</div>
                     </div> 
                 </div>
-                <div class="bio">Bio</div>
+                <div class="bio"></div>
                 <div class="sort-buttons">
                     <div class="left-row">
-                        <button class="sort-btn">All</button>
-                        <button class="sort-btn">Finished</button>
-                        <button class="sort-btn">Reading</button>
-                        <button class="sort-btn">Dropped</button>
-                        <button class="sort-btn">Want</button>
+                        <button id="AllBtn" class="sort-btn">All</button>
+                        <button id="FinishedBtn" class="sort-btn">Finished</button>
+                        <button id="ReadingBtn" class="sort-btn">Reading</button>
+                        <button id="DroppedBtn" class="sort-btn">Dropped</button>
+                        <button id="WantBtn" class="sort-btn">Want</button>
                     </div>
                     <div class="right-row">
-                        <button class="sort-btn">Сортировка по рейтингу <i class="fas fa-sort"></i></button>
+                        <!-- <button class="sort-btn">Сортировка по рейтингу <i class="fas fa-sort"></i></button> -->
                     </div>
                 </div>
             </div>
             <div class="my-book-list">
-                
+        
             </div>
         </div>
     </main>
@@ -94,5 +94,6 @@
             </div>
        </footer>
        <script src="avatar-btn-script.js"></script>
+       <script src="my-book-list-script.js"></script>
 </body>
 </html>

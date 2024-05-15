@@ -118,3 +118,108 @@ document.getElementById('addBookBtn').addEventListener('click', function() {
     // Отправляем запрос на сервер для загрузки изображения
     xhr.send(formData);
 });
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchUserBtn = document.getElementById('search-user-btn');
+    const userEmailInput = document.getElementById('user-email');
+    const adminSection = document.querySelector('.admin-section');
+
+    searchUserBtn.addEventListener('click', function() {
+        const userEmail = userEmailInput.value.trim();
+
+        // Отправляем запрос на сервер для поиска пользователя по email
+        fetchUserData(userEmail);
+    });
+
+    function fetchUserData(email) {
+        // Отправляем запрос на сервер для поиска пользователя по email
+        fetch(`find_user.php?email=${email}`)
+        .then(response => response.json())
+        .then(userData => {
+            // Если пользователь найден, получаем его ID
+            const userId = userData.user_id;
+
+            // Отправляем запрос на сервер для получения записей пользователя из userlibrary
+            fetchUserRecords(userId);
+        })
+        .catch(error => {
+            console.error('Ошибка при поиске пользователя:', error);
+        });
+    }
+
+    function fetchUserRecords(userId) {
+        // Отправляем запрос на сервер для получения записей пользователя из userlibrary
+        fetch(`get_user_records.php?user_id=${userId}`)
+        .then(response => response.json())
+        .then(userRecords => {
+            // Создаем и отображаем структуры для каждой записи пользователя
+            displayUserRecords(userRecords);
+        })
+        .catch(error => {
+            console.error('Ошибка при получении записей пользователя:', error);
+        });
+    }
+
+    function displayUserRecords(records) {
+        // Очищаем предыдущие записи перед отображением новых
+        adminSection.innerHTML = '';
+
+        // Создаем и добавляем структуру для каждой записи
+        records.forEach(record => {
+            const recordDiv = document.createElement('div');
+            recordDiv.classList.add('user-record');
+
+            const recordInfoDiv = document.createElement('div');
+            recordInfoDiv.classList.add('record-info');
+
+            // Заполняем информацию о записи из базы данных
+            recordInfoDiv.innerHTML = `
+                <p><strong>Пользователь ID:</strong> <span>${record.user_id}</span></p>
+                <p><strong>Книга ID:</strong> <span>${record.book_id}</span></p>
+                <p><strong>Рейтинг:</strong> <span>${record.rating}</span></p>
+                <p><strong>Отзыв:</strong> <span>${record.review}</span></p>
+                <p><strong>Категория:</strong> <span>${record.category}</span></p>
+                <p><strong>Дата добавления:</strong> <span>${record.date_added}</span></p>
+            `;
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.innerText = 'Удалить запись';
+            deleteBtn.addEventListener('click', function() {
+                // Отправляем запрос на сервер для удаления записи
+                deleteRecord(record.user_id, record.book_id);
+            });
+
+            recordDiv.appendChild(recordInfoDiv);
+            recordDiv.appendChild(deleteBtn);
+            adminSection.appendChild(recordDiv);
+        });
+    }
+
+    function deleteRecord(userId, bookId) {
+        // Отправляем запрос на сервер для удаления записи
+        fetch(`delete_record.php?user_id=${userId}&book_id=${bookId}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (response.ok) {
+                // Если запись успешно удалена, обновляем данные пользователя
+                fetchUserRecords(userId);
+            } else {
+                console.error('Ошибка при удалении записи');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при удалении записи:', error);
+        });
+    }
+});
