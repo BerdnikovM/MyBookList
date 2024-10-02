@@ -132,7 +132,7 @@ document.getElementById('addBookBtn').addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const searchUserBtn = document.getElementById('search-user-btn');
     const userEmailInput = document.getElementById('user-email');
-    const adminSection = document.querySelector('.admin-section');
+    const adminSection = document.querySelector('.admin-section.record-control');
 
     searchUserBtn.addEventListener('click', function() {
         const userEmail = userEmailInput.value.trim();
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(`get_user_records.php?user_id=${userId}`)
         .then(response => response.json())
         .then(userRecords => {
-            // Создаем и отображаем структуры для каждой записи пользователя
+            // Создаем и отображаем структуры для каждой записи
             displayUserRecords(userRecords);
         })
         .catch(error => {
